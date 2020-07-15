@@ -1,1 +1,102 @@
 
+#spring.profiles.active=@profileActive@
+#spring.profiles.active=mysql
+#server:
+#   port: 9020
+   
+server:
+   #address: localhost
+   #port: 9023
+   #servlet:
+   #   contextPath: /microservice-commandes
+
+#défini l'encodage pour data.sql
+## Configs de la BD
+spring:
+   #application:
+   #   name: MICRO-SERVICE-COMMANDES-MYSQL
+   datasource:
+      sql-script-encoding: UTF-8
+      url: jdbc:mysql://appsDB:3306/commandes-db?useSSL=false&allowPublicKeyRetrieval=true
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: helloworld
+
+## JPA/HIBERNATE      
+   jpa:
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.MySQL5Dialect
+
+      showSql: false
+      hibernate:
+         ddlAuto: update
+         
+## Eureka Client   
+   cloud:
+      ignoredInterfaces:
+        - eno.*
+        - virbr.*
+                
+#######################################################
+####### Monitoring dans Spring Admin ########
+#######################################################
+   boot:
+      admin:
+         client:
+            url: http://admin-server-conteneur:9095
+            instance:
+               #management-base-url: https://<client-application-name>.herokuapp.com/
+               #service-base-url: ${spring.boot.admin.client.instance.management-base-url}
+            auto-deregistration: true   
+            auto-registration: true
+            period: 5m        
+        
+
+#######################################################
+######### Découverte/Enregistrement Eureka    #########
+#######################################################
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka/
+   instance:
+      hostname: commandes-conteneur-mysql
+      preferIpAddress: true
+      instanceId: ${eureka.instance.hostname}:${spring.application.name}:${server.port} 
+      
+      
+#######################################################
+####### Monitoring dans Spring Admin ########
+#######################################################
+#spring.boot.admin:
+#   client:
+#      url: http://admin-server-conteneur:9095
+#      auto-deregistration: true
+   
+   #instance:
+   #   name: ${spring.application.name}
+   #   preferIp: true 
+
+   #instance:
+   #   metadata:
+   #     user.name: ${spring.security.user.name}
+   #     user.password: ${spring.security.user.password}
+
+management:
+   endpoints:
+      web:
+         exposure:
+           include: "*"  
+   endpoint:
+      health:
+         show-details: ALWAYS      
+
+#######################################################
+####### Découverte/Enregistrement Spring Admin ########
+#######################################################
+#spring.boot.admin.client.url= http://localhost:9095
+#management.endpoints.web.exposure.include=*
+#management.endpoint.health.show-details= always
+#spring.boot.admin.client.username=client
+#spring.boot.admin.client.password=client
