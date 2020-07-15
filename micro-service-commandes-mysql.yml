@@ -5,15 +5,15 @@
    
 server:
    #address: localhost
-   port: 9023
-   servlet:
-      contextPath: /microservice-commandes
+   #port: 9023
+   #servlet:
+   #   contextPath: /microservice-commandes
 
 #défini l'encodage pour data.sql
 ## Configs de la BD
 spring:
-   application:
-      name: MICRO-SERVICE-COMMANDES-MYSQL
+   #application:
+   #   name: MICRO-SERVICE-COMMANDES-MYSQL
    datasource:
       sql-script-encoding: UTF-8
       url: jdbc:mysql://appsDB:3306/commandes-db?useSSL=false&allowPublicKeyRetrieval=true
@@ -36,6 +36,21 @@ spring:
       ignoredInterfaces:
         - eno.*
         - virbr.*
+                
+#######################################################
+####### Monitoring dans Spring Admin ########
+#######################################################
+   boot:
+      admin:
+         client:
+            url: http://admin-server-conteneur:9095
+            instance:
+               #management-base-url: https://<client-application-name>.herokuapp.com/
+               #service-base-url: ${spring.boot.admin.client.instance.management-base-url}
+            auto-deregistration: true   
+            auto-registration: true
+            period: 5m        
+        
 
 #######################################################
 ######### Découverte/Enregistrement Eureka    #########
@@ -53,8 +68,10 @@ eureka:
 #######################################################
 ####### Monitoring dans Spring Admin ########
 #######################################################
-spring.boot.admin.client:
-   url: http://admin-server-conteneur:9095
+#spring.boot.admin:
+#   client:
+#      url: http://admin-server-conteneur:9095
+#      auto-deregistration: true
    
    #instance:
    #   name: ${spring.application.name}
