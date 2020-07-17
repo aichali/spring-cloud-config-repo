@@ -46,7 +46,7 @@ spring:
 eureka:
    client:
       serviceUrl:
-         defaultZone: http://localhost:8761/eureka/
+         defaultZone: http://eureka-server-conteneur:8761/eureka/
    instance:
       hostname: produits-conteneur-mysql
       preferIpAddress: true
