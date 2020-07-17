@@ -1,1 +1,1 @@
-# spring-cloud-config-repo
+Ce répertoire contient les différents fichiers YAML de configuration des microservices
