@@ -58,11 +58,14 @@ spring:
 eureka:
    client:
       serviceUrl:
-         defaultZone: http://aichali:09081977@eureka-server-conteneur:8761/eureka
+         defaultZone: http://eureka-server-conteneur:8761/eureka #aichali:09081977@
    instance:
       hostname: commandes-conteneur-mysql
       preferIpAddress: true
       instanceId: ${eureka.instance.hostname}:${spring.application.name}:${server.port} 
+      statusPageUrl: https://commandes-conteneur-mysql:${server.port}/info
+      healthCheckUrl: https://commandes-conteneur-mysql:${server.port}/health
+      homePageUrl: https://commandes-conteneur-mysql:${server.port}
       
       
 #######################################################
