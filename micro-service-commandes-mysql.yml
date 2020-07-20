@@ -63,9 +63,9 @@ eureka:
       hostname: commandes-conteneur-mysql
       preferIpAddress: true
       instanceId: ${eureka.instance.hostname}:${spring.application.name}:${server.port} 
-      statusPageUrl: https://commandes-conteneur-mysql:${server.port}/info
-      healthCheckUrl: https://commandes-conteneur-mysql:${server.port}/health
-      homePageUrl: https://commandes-conteneur-mysql:${server.port}
+      #statusPageUrl: https://commandes-conteneur-mysql:${server.port}/info
+      #healthCheckUrl: https://commandes-conteneur-mysql:${server.port}/health
+      #homePageUrl: https://commandes-conteneur-mysql:${server.port}
       
       
 #######################################################
