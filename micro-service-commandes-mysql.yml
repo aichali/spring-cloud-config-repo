@@ -5,7 +5,7 @@
 
 certficat:
    ssl:
-      client: file:../config/ecommerce-client.jks
+      client: /config/ecommerce-client.jks
 server:
    #address: localhost
    #port: 9023
