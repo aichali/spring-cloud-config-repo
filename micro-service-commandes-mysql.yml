@@ -2,7 +2,10 @@
 #spring.profiles.active=mysql
 #server:
 #   port: 9020
-   
+
+certficat:
+   ssl:
+      client: file:../config/ecommerce-client.jks
 server:
    #address: localhost
    #port: 9023
