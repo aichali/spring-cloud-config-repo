@@ -10,8 +10,8 @@ certficat:
 server:
    #address: localhost
    port: 9021
-   #servlet:
-      #contextPath: /microservice-produits
+   servlet:
+      contextPath: /microservice-produits
 
 #défini l'encodage pour data.sql
 ## Configs de la BD
