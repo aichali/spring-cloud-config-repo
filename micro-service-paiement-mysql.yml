@@ -40,6 +40,11 @@ spring:
         - eno.*
         - virbr.*
 
+Hibernate: 
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
 #######################################################
 ######### Découverte/Enregistrement Eureka    #########
 #######################################################
