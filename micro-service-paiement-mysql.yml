@@ -17,6 +17,9 @@ server:
 spring:
    application:
       name: MICRO-SERVICE-PAIEMENT-MYSQL
+   sleuth:
+      sampler:
+         percentage: 1.0   
    datasource:
       sql-script-encoding: UTF-8
       url: jdbc:mysql://appsDB:3306/paiement-db?useSSL=false&allowPublicKeyRetrieval=true
