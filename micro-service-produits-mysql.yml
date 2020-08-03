@@ -18,6 +18,9 @@ server:
 spring:
    application:
       name: MICRO-SERVICE-PRODUITS-MYSQL
+   sleuth:
+      sampler:
+         percentage: 1.0   
    datasource:
       sql-script-encoding: UTF-8
       url: jdbc:mysql://appsDB:3306/produits-db?useSSL=false&allowPublicKeyRetrieval=true
