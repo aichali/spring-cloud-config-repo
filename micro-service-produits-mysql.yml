@@ -22,7 +22,7 @@ spring:
       sampler:
          percentage: 1.0   
    zipkin:
-      baseUrl: http://zipkin-server:9411/
+      baseUrl: http://zipkin-server-conteneur:9411/
    datasource:
       sql-script-encoding: UTF-8
       url: jdbc:mysql://appsDB:3306/produits-db?useSSL=false&allowPublicKeyRetrieval=true
