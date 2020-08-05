@@ -19,7 +19,9 @@ spring:
       name: MICRO-SERVICE-PAIEMENT-MYSQL
    sleuth:
       sampler:
-         percentage: 1.0   
+         percentage: 1.0
+      zipkin:
+         baseUrl: http://zipkin-server-conteneur:9411/
    datasource:
       sql-script-encoding: UTF-8
       url: jdbc:mysql://appsDB:3306/paiement-db?useSSL=false&allowPublicKeyRetrieval=true
