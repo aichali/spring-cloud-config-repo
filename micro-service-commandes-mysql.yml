@@ -15,8 +15,8 @@ server:
 #défini l'encodage pour data.sql
 ## Configs de la BD
 spring:
-   #application:
-   #   name: MICRO-SERVICE-COMMANDES-MYSQL
+   application:
+      name: MICRO-SERVICE-COMMANDES-MYSQL
    sleuth:
       sampler:
          percentage: 1.0
