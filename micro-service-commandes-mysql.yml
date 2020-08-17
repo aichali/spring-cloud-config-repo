@@ -65,6 +65,8 @@ spring:
 #######################################################
 eureka:
    client:
+      registerWithEureka: true
+      fetchRegistry: true
       #securePortEnabled: true
       serviceUrl:
          defaultZone: https://eureka-server-conteneur:8761/eureka #aichali:09081977@
