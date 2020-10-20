@@ -68,16 +68,17 @@ eureka:
 #######################################################
 spring.boot.admin.client:
    url: http://admin-server-conteneur:9095
-   
+   username: admin
+   password: admin
+   enabled: true
+   instance:
+     name: ${spring.application.name} 
+   auto-deregistration: true  
+   auto-registration: true 
+   period: 5m
    #instance:
    #   name: ${spring.application.name}
    #   preferIp: true 
-   
-   
-   #instance:
-   #   metadata:
-   #     user.name: ${spring.security.user.name}
-   #     user.password: ${spring.security.user.password}
 
 management:
    endpoints:
